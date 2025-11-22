@@ -32,7 +32,7 @@ function UserService(UserModel) {
   }
 
   function createToken(user) {
-    let token = jwt.sign({ id: user._id, name: user.name, role: user.role.scopes}, config.secret, {
+    let token = jwt.sign({ id: user._id, name: user.name, role: user.role.scopes}, process.env.JWT_SECRET || 'secret', {
       expiresIn: config.expiresPassword,
     });
 
