@@ -1,0 +1,58 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Table > renders the component 1`] = `
+<div>
+  <table
+    class="table table-hover"
+  >
+    <thead>
+      <tr>
+        <th>
+          name
+        </th>
+        <th>
+          age
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Chris
+        </td>
+        <td>
+          14
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Heitor
+        </td>
+        <td>
+          15
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Table > when dont exists data > renders the component 1`] = `
+<div>
+  <table
+    class="table table-hover"
+  >
+    <thead>
+      <tr>
+        <th>
+          name
+        </th>
+        <th>
+          age
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;

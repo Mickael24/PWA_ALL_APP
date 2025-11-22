@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "types": [
+      "node",
+      "vite/client",
+      "react",
+      "react-dom",
+      "reactstrap"
+    ]
+  },
+  "include": ["src/**/*", "global.d.ts"],
+  "exclude": [
+    "node_modules"
+  ]
+}

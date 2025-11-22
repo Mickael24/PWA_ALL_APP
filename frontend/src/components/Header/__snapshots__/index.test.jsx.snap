@@ -1,0 +1,38 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Header > renders corretly the component 1`] = `
+<div>
+  <div
+    class="_header_b4135b"
+  >
+    <div
+      class="_logo_b4135b"
+    >
+      <img
+        alt="Logo"
+        class="_img_b4135b"
+        src="/src/components/Header/logo.png"
+      />
+      <h1>
+        PWA
+      </h1>
+    </div>
+    <nav
+      class="_navBar_b4135b navbar"
+    >
+      <a
+        class="_link_b4135b navbar-brand"
+        href="/"
+      >
+        Login
+      </a>
+      <a
+        class="navbar-brand"
+        href="/"
+      >
+        Register
+      </a>
+    </nav>
+  </div>
+</div>
+`;
