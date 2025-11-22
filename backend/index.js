@@ -10,7 +10,7 @@ const config = require('./config');
 const hostname = "localhost";
 const port = 5000;
 
-mongoose.connect(process.env.MONGODB_URL || config.MONGODB_URL)
+mongoose.connect(process.env.MONGO_URI || config.db)
 .then(() => console.log('Conection successful!'))
 .catch((err) => console.error(err));
 
