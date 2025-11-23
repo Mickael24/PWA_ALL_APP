@@ -2,16 +2,12 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "types": [
-      "node",
-      "vite/client",
-      "react",
-      "react-dom",
-      "reactstrap"
-    ]
+    "types": ["node", "vite/client", "react", "react-dom", "reactstrap"],
+    "target": "ES2020",
+    "module": "ESNext", // This allows 'import.meta'
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "moduleResolution": "bundler"
   },
   "include": ["src/**/*", "global.d.ts"],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"],
 }

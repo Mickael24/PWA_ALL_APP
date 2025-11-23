@@ -7,7 +7,7 @@ import { usePostData } from "../../../AdminPage/hooks/usePostData";
 import { useGetMember, GetMember } from "../../../../hooks/useGetMember";
 
 export const Member = ({ user }) => {
-  const localhost = "http://localhost:5000";
+  const localhost = import.meta.env.BACKEND_URL || "http://localhost:5000";
   const [showForm, setShowForm] = useState(false);
   const [imageSrc, setImageSrc] = useState(null);
   const { isLoading: isLoadingPost, addData } = usePostData(
