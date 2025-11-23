@@ -15,6 +15,7 @@ export const useGetPerfil = (url = "") => {
 
     fetch(querie, {
       headers: { Accept: "application/json" },
+      credentials: "include",
     })
       .then((response) => response.json())
       .then((response) => {

@@ -33,6 +33,7 @@ export const useGetMember = (userId : GetMemberProps) : GetMember => {
 
       fetch(querie, {
         headers: { Accept: "application/json" },
+        credentials: "include",
       })
         .then((response) => response.json())
         .then((response) => setMember(response))

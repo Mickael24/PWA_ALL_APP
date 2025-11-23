@@ -14,6 +14,7 @@ export const usePostUploadData = (url = "", dataToPost) => {
       },
       method: "POST",
       body: JSON.stringify(data),
+      credentials: "include",
     })
       .then((response) => {
         if (response.ok) {

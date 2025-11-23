@@ -8,7 +8,8 @@ export const useAuth = () => {
     const hasLogin = useCallback(() => {
         setFeching(true);
         fetch(buildApiUrl('/auth/me'), {
-            headers: { 'Accept': 'application/json' }
+            headers: { 'Accept': 'application/json' },
+            credentials: "include",
         })
         .then((response) => response.json())
         .then((response) => {

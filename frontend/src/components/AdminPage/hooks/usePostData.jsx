@@ -14,6 +14,7 @@ export const usePostData = (url = "") => {
       },
       method: "POST",
       body: JSON.stringify(data),
+      credentials: "include",
     })
       .then((response) => {
         if (response.ok) {

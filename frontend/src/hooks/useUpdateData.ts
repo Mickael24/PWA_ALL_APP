@@ -14,6 +14,7 @@ export const useUpdateData = (url = "") => {
       },
       method: "PUT",
       body: JSON.stringify(data),
+      credentials: "include",
     })
       .then((response) => {
         if (response.ok) {
