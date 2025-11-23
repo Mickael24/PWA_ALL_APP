@@ -7,8 +7,8 @@ const swagguerUI = require('swagger-ui-express');
 const swaggerDocument = require('./doc/api.json');
 
 const config = require('./config');
-const hostname = "localhost";
 const port = process.env.PORT || 5000; 
+const hostname = ("RENDER" in process.env) ? "0.0.0.0" : "localhost"; // 0.0.0.0 on Render
 
 mongoose.connect(process.env.MONGO_URI || config.db)
 .then(() => console.log('Conection successful!'))
