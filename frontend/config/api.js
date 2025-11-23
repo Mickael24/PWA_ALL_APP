@@ -1,7 +1,8 @@
 const trimTrailingSlashes = (value = "") => value.replace(/\/+$/, "");
 const trimLeadingSlashes = (value = "") => value.replace(/^\/+/, "");
 
-const rawApiBase = trimTrailingSlashes(import.meta.env.VITE_API_BASE_URL || "");
+const rawApiBase = trimTrailingSlashes(import.meta.env.VITE_API_BASE_URL || "https://pwa-all-app-backend.onrender.com");
+console.log('API Base URL:', rawApiBase);
 const API_BASE = rawApiBase || "/api";
 
 const defaultOrigin =
