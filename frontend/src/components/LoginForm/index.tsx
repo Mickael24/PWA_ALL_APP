@@ -23,6 +23,7 @@ const LoginForm = ({ title, role, data } : LoginFormProps) => {
       headers: { "Content-Type": "application/json" },
       method: "POST",
       body: JSON.stringify(data),
+      credentials: "include",
     })
       .then((r) => r.json())
       .then((response) => {
