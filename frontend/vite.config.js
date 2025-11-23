@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
+const backendUrl = process.env.VITE_BACKEND_URL || "http://localhost:5000";
+
 export default defineConfig({
   plugins: [react()],
   css: {
@@ -15,13 +17,13 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: import.meta.env.BACKEND_URL || "http://localhost:5000",
+        target: backendUrl,
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, '')
       },
       '/socket.io': {
-        target: import.meta.env.BACKEND_URL || "http://localhost:5000",
+        target: backendUrl,
         changeOrigin: true,
         secure: false,
         ws: true, // Enable WebSocket proxying
