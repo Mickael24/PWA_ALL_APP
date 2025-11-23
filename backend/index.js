@@ -5,6 +5,7 @@ const path = require('path');
 const socketIo = require('socket.io');
 const swagguerUI = require('swagger-ui-express');
 const swaggerDocument = require('./doc/api.json');
+const cors = require('cors');
 
 const config = require('./config');
 const port = process.env.PORT || 5000; 
@@ -17,6 +18,19 @@ mongoose.connect(process.env.MONGO_URI || config.db)
 let router = require('./router');
 
 var app = express();
+
+const corsOptions = {
+  origin(origin, callback) {
+    if (isAllowedOrigin(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error('Not allowed by CORS'));
+  },
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 
 const server = http.createServer(app);
 const io = socketIo(server, {
