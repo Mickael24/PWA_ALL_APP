@@ -18,13 +18,13 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: backendUrl,
+        target: 'https://pwa-all-app-backend.onrender.com',
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, '')
       },
       '/socket.io': {
-        target: backendUrl,
+        target: 'https://pwa-all-app-backend.onrender.com',
         changeOrigin: true,
         secure: false,
         ws: true, // Enable WebSocket proxying
