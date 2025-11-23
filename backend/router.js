@@ -8,7 +8,7 @@ const express = require('express');
 function init (io) {
     let api = express();
 
-    api.use('/auth', AuthAPI());
+    api.use('/api/auth', AuthAPI());
     api.use('/stadium', StadiumAPI());
     api.use('/users', UsersAPI(io));
     api.use('/tickets', TicketsAPI());
