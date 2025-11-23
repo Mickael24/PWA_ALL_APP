@@ -42,7 +42,7 @@ function AuthRouter() {
       .then((response) => {
         console.log('response', response)
         // The httpOnly: true setting means that the cookie can’t be read using JavaScript but can still be sent back to the server in HTTP requests
-        res.cookie("token", response.token, { httpOnly: true });
+        res.cookie("token", response.token, { httpOnly: true, secure: 'true', sameSite: 'none' });
         res.status(200);
         res.send(response);
       })
@@ -59,7 +59,7 @@ function AuthRouter() {
   router.route("/logout").get(function (req, res, next) {
     // The httpOnly: true setting means that the cookie can’t be read using JavaScript but can still be sent back to the server in HTTP requests
     // MaxAge : It allows us to invalidate the cookie
-    res.cookie("token", req.cookies.token, { httpOnly: true, maxAge: 0 });
+    res.cookie("token", req.cookies.token, { httpOnly: true, maxAge: 0, secure: 'true', sameSite: 'none' });
 
     res.status(200);
     res.send({ logout: true });
