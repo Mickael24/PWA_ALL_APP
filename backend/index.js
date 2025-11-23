@@ -19,6 +19,16 @@ let router = require('./router');
 
 var app = express();
 
+const customFrontendUrl = process.env.FRONTEND_URL || '';
+
+const allowedOrigins = [
+  customFrontendUrl,
+  "http://*:*"
+].filter(Boolean);
+
+const isAllowedOrigin = (origin) =>
+  !origin || allowedOrigins.includes(origin);
+
 const corsOptions = {
   origin(origin, callback) {
     if (isAllowedOrigin(origin)) {
