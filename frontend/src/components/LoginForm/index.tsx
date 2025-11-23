@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import { useEffect, useState } from "react";
 import isEmpty from "lodash/isEmpty";
+import { buildApiUrl } from "../../../config/api";
 
 export interface LoginFormProps {
   title: string;
@@ -19,7 +20,7 @@ const LoginForm = ({ title, role, data } : LoginFormProps) => {
   const onSubmit = (data) => login(data);
 
   const login = (data) => {
-    fetch("/api/auth/login", {
+    fetch(buildApiUrl("/auth/login"), {
       headers: { "Content-Type": "application/json" },
       method: "POST",
       body: JSON.stringify(data),
