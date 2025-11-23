@@ -23,7 +23,7 @@ const customFrontendUrl = process.env.FRONTEND_URL || '';
 
 const allowedOrigins = [
   customFrontendUrl,
-  'https://pwa-all-app-backend.onrender.com',
+  'https://pwa-all-app.vercel.app/',
   "http://*:*"
 ].filter(Boolean);
 
