@@ -8,7 +8,7 @@ const swaggerDocument = require('./doc/api.json');
 
 const config = require('./config');
 const hostname = "localhost";
-const port = 5000;
+const port = process.env.PORT || 5000; 
 
 mongoose.connect(process.env.MONGO_URI || config.db)
 .then(() => console.log('Conection successful!'))
