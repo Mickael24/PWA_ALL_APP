@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { buildApiUrl } from "../../../../config/api";
 
 export const useGetData = (url = "", pageSize, current) => {
   const [isError, setError] = useState(false);
@@ -12,12 +13,12 @@ export const useGetData = (url = "", pageSize, current) => {
   });
 
   const fetchingData = useCallback(() => {
-    const querie =
-      `/api/${url}?` +
-      new URLSearchParams({
-        limit: pageSize,
-        skip: current - 1,
-      });
+    const params = new URLSearchParams({
+      limit: pageSize,
+      skip: current - 1,
+    });
+
+    const querie = `${buildApiUrl(url)}?${params.toString()}`;
 
     setLoading(true);
 

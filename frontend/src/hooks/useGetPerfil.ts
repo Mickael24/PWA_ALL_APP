@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { buildApiUrl } from "../../config/api";
 
 export const useGetPerfil = (url = "") => {
   const [isError, setError] = useState(false);
@@ -8,7 +9,7 @@ export const useGetPerfil = (url = "") => {
   });
 
   const fetchingData = useCallback(() => {
-    const querie = `/api/${url}/perfil`;
+    const querie = buildApiUrl(`/${url}/perfil`);
 
     setLoading(true);
 

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { buildApiUrl } from "../../config/api";
 
 export interface GetMemberProps {
   userId: Number;
@@ -25,7 +26,7 @@ export const useGetMember = (userId : GetMemberProps) : GetMember => {
   });
 
   const fetchingData = useCallback(() => {
-    const querie = `/api/users/member/${userId}`;
+    const querie = buildApiUrl(`/users/member/${userId}`);
 
     if (userId) {
       setLoading(true);

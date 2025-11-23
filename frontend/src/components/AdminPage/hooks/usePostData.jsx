@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { buildApiUrl } from "../../../../config/api";
 
 export const usePostData = (url = "") => {
   const [isError, setError] = useState(false);
@@ -7,7 +8,7 @@ export const usePostData = (url = "") => {
 
   const addData = (data) => {
     setLoading(true);
-    fetch(`/api/${url}`, {
+    fetch(buildApiUrl(`${url}`), {
       headers: {
         "Content-Type": "application/json",
       },
