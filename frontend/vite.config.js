@@ -2,10 +2,8 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 const backendUrl = process.env.BACKEND_URL || "http://localhost:5000";
-console.log('Using backend URL:', process.env);
-console.log('Meta', import.meta.env)
 
-export default defineConfig({gti 
+export default defineConfig({
   plugins: [react()],  
   css: {
     preprocessorOptions: {
