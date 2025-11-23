@@ -21,6 +21,7 @@ export default defineConfig({
         target: backendUrl,
         changeOrigin: true,
         secure: false,
+        rewrite: (path) => path.replace(/^\/api/, '')
       },
       '/socket.io': {
         target: backendUrl,
