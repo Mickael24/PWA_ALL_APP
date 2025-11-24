@@ -56,7 +56,7 @@ const LoginForm = ({ title, role, data } : LoginFormProps) => {
         <h2>{title}</h2>
         <form className={styles.formLogin} onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.field}>
-            <label className={styles.label} htmlFor="email">Name:</label>
+            <label className={styles.label} htmlFor="email">Name of User:</label>
             <input
               id="name"
               name="name"
